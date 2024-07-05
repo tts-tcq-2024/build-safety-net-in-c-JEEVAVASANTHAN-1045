@@ -4,7 +4,11 @@
 
 char getSoundexCode(char c) {
  c = toupper(c);
- const char soundexMapping[26] = "01230120022455012623010202";
+ const char soundexMapping[26] = {
+     '0', '1', '2', '3', '0', '1', '2', '0', '0', '2',
+     '2', '4', '5', '5', '0', '1', '2', '6', '2', '3',
+     '0', '1', '0', '2', '0', '2'
+ };
  if (c < 'A' || c > 'Z') {
      return '0';
  }
@@ -28,7 +32,7 @@ void generateSoundex(const char *name, char *soundex) {
 }
 
 int main() {
- char name[] = "Smith";
+ char name[] = "kaleem";
  char soundex[5];
  generateSoundex(name, soundex);
  printf("Soundex code for %s is %s\n", name, soundex);
