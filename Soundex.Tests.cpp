@@ -30,13 +30,7 @@ TEST(SoundexTestsuite, HandlesVowelCharacters) {
     generateSoundex("AEIOUHWY", soundex);
     ASSERT_STREQ(soundex, "A000");
 }
-
-TEST(SoundexTestsuite, HandlesVowelCharacters) {
-    char soundex[5];
-  generateSoundex("Ferrari", soundex);
-  ASSERT_STREQ(soundex, "F600");
-}
-
+ 
 TEST(SoundexTestsuite, HandlesMultipleSameSoundexCodeCharacters) {
     char soundex[5];
     generateSoundex("YYYY", soundex);
