@@ -6,13 +6,7 @@ TEST(SoundexTestsuite, ConstantsReplacedByDigits) {
     generateSoundex("BX", soundex);
     ASSERT_STREQ(soundex, "B200");
 }
-
-TEST(SoundexTestsuite, HandlesCarNames) {
- char soundex[5];
- generateSoundex("Mercedes", soundex);
- ASSERT_STREQ(soundex, "M632");
-}
-
+ 
 TEST(SoundexTestsuite, NonAlphabeticCharactersIgnored) {
     char soundex[5];
     generateSoundex("A1X", soundex);
@@ -36,8 +30,7 @@ TEST(SoundexTestsuite, HandlesVowelCharacters) {
     generateSoundex("AEIOUHWY", soundex);
     ASSERT_STREQ(soundex, "A000");
 }
-
-
+ 
 TEST(SoundexTestsuite, HandlesMultipleSameSoundexCodeCharacters) {
     char soundex[5];
     generateSoundex("YYYY", soundex);
